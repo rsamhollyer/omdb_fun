@@ -23,11 +23,22 @@ export default function MovieDetails({ pathID }) {
             <Stats>
               <div className="rating">
                 <motion.h3>{movie.Title}</motion.h3>
+                <motion.h3>{movie.Year}</motion.h3>
+                <motion.h3>{movie.Released}</motion.h3>
               </div>
-              <Info></Info>
+              <Info>
+                <motion.h3>{movie.Rated}</motion.h3>
+              </Info>
             </Stats>
-            <Media></Media>
-            <Description></Description>
+            <Media>
+              <div>
+                <motion.img src={movie.Poster} />
+              </div>
+            </Media>
+            <motion.h4>{movie.BoxOffice}</motion.h4>
+            <Description>
+              <motion.p>{movie.Plot}</motion.p>
+            </Description>
           </Detail>
         </CardShadow>
       )}
@@ -66,20 +77,12 @@ const Detail = styled(motion.div)`
   left: 10%;
   color: black;
   z-index: 15;
-  img {
-    width: 100%;
-  }
 `;
 
 const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  img {
-    width: 1.2rem;
-    height: 1.2rem;
-    display: inline;
-  }
 `;
 
 const Info = styled(motion.div)`
@@ -87,8 +90,17 @@ const Info = styled(motion.div)`
 `;
 
 const Media = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 5rem;
+
+  div {
+    width: 50%;
+  }
+
   img {
+    object-fit: cover;
     width: 100%;
   }
 `;

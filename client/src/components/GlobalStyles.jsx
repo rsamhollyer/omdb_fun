@@ -9,6 +9,23 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html{
+   
+    scrollbar-width:thin;
+    scrollbar-color:darkgrey;
+    scrollbar-track-color: white;
+    &::-webkit-scrollbar{
+        width:.5rem;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color:darkgrey;
+    }
+    &::-webkit-scrollbar-track {
+    background-color: white;
+  }
+
+}
+
+body{
     font-family: 'Shippori Mincho', serif;
 }
 a{

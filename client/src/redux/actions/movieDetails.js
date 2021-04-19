@@ -1,7 +1,7 @@
 import { getOneMovie, searchMovie } from "../../api/api";
 
-export const getMovie = (title) => async (dispatch) => {
-  const movieInformation = await getOneMovie(title);
+export const getMovie = (imdbId) => async (dispatch) => {
+  const movieInformation = await getOneMovie(imdbId);
 
   dispatch({
     type: "FETCH_MOVIE",

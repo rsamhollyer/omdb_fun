@@ -8,11 +8,11 @@ const omdbAxios = axios.create({
   },
 });
 
-export const getOneMovie = async (title) => {
+export const getOneMovie = async (imdbId) => {
   try {
     const { data } = await omdbAxios.get("/", {
       params: {
-        t: title,
+        i: imdbId,
         plot: "full",
       },
     });

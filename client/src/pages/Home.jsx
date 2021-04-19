@@ -1,20 +1,28 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Movie from "../components/Movie";
+import MovieDetails from "../components/MovieDetails";
 
 export default function MovieSearch() {
   const { searched } = useSelector((state) => state.movies);
+  const { pathname } = useLocation();
+  const pathID = pathname.split("/")[2];
+
   return (
     <MovieList>
-      <Movies>
-        {searched?.Search &&
-          searched.Search.map((movie) => (
-            <Movie key={movie.imdbID} movie={movie} />
-          ))}
-      </Movies>
+      <AnimateSharedLayout>
+        <AnimatePresence>
+          {pathID && <MovieDetails pathID={pathID} />}
+        </AnimatePresence>
+        <Movies>
+          {searched?.Search &&
+            searched.Search.map((movie) => (
+              <Movie key={movie.imdbID} movie={movie} />
+            ))}
+        </Movies>
+      </AnimateSharedLayout>
     </MovieList>
   );
 }

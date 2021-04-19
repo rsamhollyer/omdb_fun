@@ -2,11 +2,17 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { getMovie } from "../redux/actions/movieDetails";
 
 export default function Movie({ movie }) {
   const dispatch = useDispatch();
+
+  const getMovieHandler = () => {
+    dispatch(getMovie(movie.imdbID));
+  };
+
   return (
-    <StyledMovie>
+    <StyledMovie onClick={getMovieHandler}>
       <Link to={`/movie/${movie.imdbID}`}>
         <motion.img src={movie.Poster} alt={movie.Title} />
         <p>{movie.Year}</p>

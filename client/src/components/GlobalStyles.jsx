@@ -22,6 +22,10 @@ input{
     font-weight: bold;
     font-family: 'Shippori Mincho', serif;
 }
+h3{
+    font-size:1.2rem;
+    }
+
 `;
 
 export default GlobalStyles;

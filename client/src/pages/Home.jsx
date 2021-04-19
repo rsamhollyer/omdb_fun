@@ -24,11 +24,13 @@ const MovieList = styled(motion.div)`
   h2 {
     padding: 5rem 0;
   }
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 `;
 const Movies = styled(motion.div)`
   min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  justify-items: center;
+  align-items: center;
   gap: 3rem;
 `;

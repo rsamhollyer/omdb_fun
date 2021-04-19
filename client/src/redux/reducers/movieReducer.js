@@ -1,5 +1,6 @@
 const initState = {
   movie: {},
+  searched: {},
 };
 
 const movieDetailReducer = (state = initState, action) => {
@@ -9,6 +10,9 @@ const movieDetailReducer = (state = initState, action) => {
         ...state,
         movie: action.payload.movie,
       };
+
+    case "SEARCH_MOVIE":
+      return { ...state, searched: action.payload.searched };
 
     default:
       return { ...state };

@@ -30,7 +30,6 @@ export const searchMovie = async (search) => {
         page: 1,
       },
     });
-    console.log(data);
     return data;
   } catch (err) {
     return console.log(err);

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 export default function MovieDetails() {
-  const { movie } = useSelector((state) => state.detail);
+  const { movie } = useSelector((state) => state.movies);
   const history = useHistory();
 
   return <div></div>;

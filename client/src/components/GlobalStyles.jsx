@@ -11,7 +11,17 @@ const GlobalStyles = createGlobalStyle`
 html{
     font-family: 'Shippori Mincho', serif;
 }
-
+a{
+  text-decoration:none;
+  color:#333;
+}
+img{
+    display:block;
+}
+input{ 
+    font-weight: bold;
+    font-family: 'Shippori Mincho', serif;
+}
 `;
 
 export default GlobalStyles;

@@ -1,10 +1,11 @@
-import MoviePage from "./pages/MoviePage";
+import GlobalStyles from "./components/GlobalStyles";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <h1>HI REACT</h1>
-      <MoviePage />
+      <GlobalStyles />
+      <Home />
     </div>
   );
 }

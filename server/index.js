@@ -5,7 +5,7 @@ const app = express();
 const server = http.createServer(app);
 
 const morgan = require("morgan");
-const PORT = 3000;
+const PORT = 5000;
 const HOST = "localhost";
 const logger = morgan("dev");
 

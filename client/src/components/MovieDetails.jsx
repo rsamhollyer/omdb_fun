@@ -22,7 +22,7 @@ export default function MovieDetails({ pathID }) {
       {movie.imdbID === pathID && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail>
-            <DetailLeft />
+
           </Detail>
         </CardShadow>
       )}
@@ -62,6 +62,5 @@ const Detail = styled(motion.div)`
   left: 10%;
   color: white;
   z-index: 15;
-  display: flex;
-  justify-content: space-evenly;
+
 `;

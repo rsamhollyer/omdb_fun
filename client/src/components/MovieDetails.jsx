@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
+import DetailLeft from "./DetailLeft";
+
 export default function MovieDetails({ pathID }) {
   const { movie } = useSelector((state) => state.movies);
   const history = useHistory();
@@ -20,14 +22,7 @@ export default function MovieDetails({ pathID }) {
       {movie.imdbID === pathID && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail>
-            <Stats>
-              <div className="rating">
-                <motion.h3>{movie.Title}</motion.h3>
-              </div>
-              <Info></Info>
-            </Stats>
-            <Media></Media>
-            <Description></Description>
+            <DetailLeft />
           </Detail>
         </CardShadow>
       )}
@@ -39,7 +34,7 @@ const CardShadow = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   position: fixed;
   top: 0;
   left: 0;
@@ -58,41 +53,15 @@ const CardShadow = styled(motion.div)`
 `;
 
 const Detail = styled(motion.div)`
-  width: 80%;
+  width: 80vw;
+  height: 80vh;
   border-radius: 1rem;
   padding: 2rem 5rem;
-  background: white;
+  background: black;
   position: absolute;
   left: 10%;
-  color: black;
+  color: white;
   z-index: 15;
-  img {
-    width: 100%;
-  }
-`;
-
-const Stats = styled(motion.div)`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  img {
-    width: 1.2rem;
-    height: 1.2rem;
-    display: inline;
-  }
-`;
-
-const Info = styled(motion.div)`
-  text-align: center;
-`;
-
-const Media = styled(motion.div)`
-  margin-top: 5rem;
-  img {
-    width: 100%;
-  }
-`;
-
-const Description = styled(motion.div)`
-  margin: 5rem 0;
+  justify-content: space-evenly;
 `;

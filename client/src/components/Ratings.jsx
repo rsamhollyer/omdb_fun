@@ -22,7 +22,7 @@ function Ratings({ rated }) {
 }
 const RatingContainer = styled(motion.div)`
   img {
-    width: 5rem;
+    width: 50px;
   }
 `;
 export default Ratings;

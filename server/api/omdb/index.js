@@ -5,7 +5,6 @@ class OMDBAPI {
   constructor() {
     const instance = axios.create({
       baseURL: omdb.url,
-      timeout: 5000,
       params: {
         apikey: omdb.key,
       },
@@ -13,7 +12,6 @@ class OMDBAPI {
 
     this.instance = instance;
   }
-
   async getOneMovie(imdbId) {
     try {
       const { data } = await this.instance.get("/", {
@@ -38,7 +36,8 @@ class OMDBAPI {
       });
       return data;
     } catch (err) {
-      return console.log(err);
+      console.log(err);
+      return err;
     }
   }
 }

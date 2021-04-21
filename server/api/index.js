@@ -1,3 +1,3 @@
 module.exports = {
-  callOMDP: require("./omdb"),
+  callOMDB: require("./omdb"),
 };

@@ -1,19 +1,16 @@
 import axios from "axios";
+import config from "../config";
 
 const omdbAxios = axios.create({
-  baseURL: "http://www.omdbapi.com/",
+  baseURL: config.server.address,
   timeout: 5000,
-  params: {
-    apikey: process.env.REACT_APP_OMDB_API,
-  },
 });
 
 export const getOneMovie = async (imdbId) => {
   try {
-    const { data } = await omdbAxios.get("/", {
+    const { data } = await omdbAxios.get(`/api/omdb/${imdbId}`, {
       params: {
         i: imdbId,
-        plot: "full",
       },
     });
     return data;
@@ -24,10 +21,9 @@ export const getOneMovie = async (imdbId) => {
 
 export const searchMovie = async (search) => {
   try {
-    const { data } = await omdbAxios.get("/", {
+    const { data } = await omdbAxios.get("/api/omdb/search", {
       params: {
         s: search,
-        page: 1,
       },
     });
     return data;

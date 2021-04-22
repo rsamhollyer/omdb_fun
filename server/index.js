@@ -5,15 +5,14 @@ const app = express();
 const server = http.createServer(app);
 const path = require("path");
 const compression = require("compression");
-const morgan = require("morgan");
 const PORT = 5000;
 const HOST = "localhost";
-const logger = morgan("dev");
 const routes = require("./router");
 const cors = require("cors");
+const httpLogger = require("./services/logs");
 
+app.use(httpLogger);
 app.use(express.static(path.join(__dirname, "public")));
-app.use(logger);
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 app.use(express.json());

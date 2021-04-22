@@ -41,7 +41,7 @@ class OMDBAPI {
   }
 
   _handleError(err) {
-    console.log("SERVICES", err.message);
+    console.error("SERVICES", err.message);
     return {
       status: err.response.status,
       statusText: err.response.statusText,

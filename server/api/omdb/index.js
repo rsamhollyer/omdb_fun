@@ -22,7 +22,7 @@ class OMDBAPI {
       });
       return data;
     } catch (err) {
-      return console.log(err);
+      return this._handleError(err);
     }
   }
 
@@ -36,9 +36,18 @@ class OMDBAPI {
       });
       return data;
     } catch (err) {
-      console.log(err);
-      return err;
+      return this._handleError(err);
     }
+  }
+
+  _handleError(err) {
+    console.log("SERVICES", err.message);
+    return {
+      status: err.response.status,
+      statusText: err.response.statusText,
+      message: err.message,
+      error: err.response.data.Error,
+    };
   }
 }
 

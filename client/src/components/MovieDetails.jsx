@@ -20,13 +20,15 @@ export default function MovieDetails({ pathID }) {
 
   return (
     <>
-      {movie.imdbID === pathID && (
+      {movie.imdbID === pathID ? (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail>
             <DetailLeft />
             <DetailRight />
           </Detail>
         </CardShadow>
+      ) : (
+        <div>Something Went Wrong</div>
       )}
     </>
   );

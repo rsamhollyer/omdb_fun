@@ -4,10 +4,12 @@ const searchMovies = async (req, res) => {
   const { s } = req.query;
   try {
     const data = await callOMDB.searchMovie(s);
+    if (data.error) {
+      throw data;
+    }
     res.status(200).json(data);
   } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
+    res.status(err.status).json(err);
   }
 };
 
@@ -16,10 +18,12 @@ const getOneMovie = async (req, res) => {
 
   try {
     const data = await callOMDB.getOneMovie(i);
+    if (data.error) {
+      throw data;
+    }
     res.status(200).json(data);
   } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
+    res.status(err.status).json(err);
   }
 };
 

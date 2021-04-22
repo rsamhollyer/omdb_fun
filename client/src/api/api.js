@@ -3,7 +3,6 @@ import config from "../config";
 
 const omdbAxios = axios.create({
   baseURL: config.server.address,
-  timeout: 5000,
 });
 
 export const getOneMovie = async (imdbId) => {

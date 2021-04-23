@@ -9,7 +9,7 @@ const PORT = 5000;
 const HOST = "localhost";
 const routes = require("./router");
 const cors = require("cors");
-const httpLogger = require("./services/logs");
+const { httpLogger } = require("./services");
 
 app.use(httpLogger);
 app.use(express.static(path.join(__dirname, "public")));

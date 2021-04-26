@@ -26,12 +26,12 @@ class OMDBAPI {
     }
   }
 
-  async searchMovie(search) {
+  async searchMovie(search,page=1) {
     try {
       const { data } = await this.instance.get("/", {
         params: {
           s: search,
-          page: 1,
+          page,
         },
       });
       return data;

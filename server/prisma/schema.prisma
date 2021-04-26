@@ -9,3 +9,12 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model MovieList {
+  imdbID    String   @id
+  Title     String
+  Year      String
+  Type      String
+  Poster    String
+  createdAt DateTime @default(now())
+}

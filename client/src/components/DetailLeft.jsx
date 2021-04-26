@@ -9,6 +9,8 @@ function DetailLeft() {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
 
+  const starRatings = Array.from(Array(10)).map((x, i) => i + 1);
+
   const onMouseEnter = (index) => {
     setHoverRating(index);
   };
@@ -30,7 +32,7 @@ function DetailLeft() {
       <Votes>{movie.imdbVotes}</Votes>
       <YourRating>Rate This</YourRating>
       <Stars>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => {
+        {starRatings.map((index) => {
           return (
             <RatingIcon
               index={index}

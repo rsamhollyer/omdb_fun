@@ -1,4 +1,4 @@
-const { httpStatusCodes } = require("../base_errors");
+const { httpStatusCodes, BaseError } = require("../base_errors");
 
 class Api404Error extends BaseError {
   constructor(
@@ -11,4 +11,4 @@ class Api404Error extends BaseError {
   }
 }
 
-module.exports = new Api404Error();
+module.exports = Api404Error;

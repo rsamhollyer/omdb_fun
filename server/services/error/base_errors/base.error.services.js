@@ -10,4 +10,4 @@ class BaseError extends Error {
   }
 }
 
-module.exports = new BaseError();
+module.exports = BaseError;

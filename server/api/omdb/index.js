@@ -1,6 +1,5 @@
 const axios = require("axios");
 const { omdb } = require("../../config");
-const { omdbService } = require("../../services");
 
 class OMDBAPI {
   constructor() {
